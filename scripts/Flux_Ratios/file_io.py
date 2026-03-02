@@ -1,10 +1,6 @@
-from Post_BEAGLE_Analysis import *
-from Helper_Functions import *
-
-
-def read_bgl_agn_output(file):
-
-    return Beagle_Output(file)
+from astropy.io import fits
+import pandas as pd
+from astropy.table import Table
 
 def read_hdu(file):
     hdu = fits.open(file)
