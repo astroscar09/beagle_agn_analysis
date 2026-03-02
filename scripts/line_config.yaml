@@ -1,0 +1,130 @@
+line:
+  NIV:
+    center: 1488
+    window_min: 90
+    window_max: 250
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 4
+       - 1486.496
+       - 25
+       - -0.1
+       - 4
+
+  CIV:
+    center: 1549
+    window_min: 150
+    window_max: 250
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 6
+       - 1549
+       - 25
+       - 0
+       - 6
+
+  HeII_OIII:
+    center: 1663
+    window_min: 90
+    window_max: 100
+    line_ratio: 0.98642212
+    fit_type: double_gaussian
+    intitial_condition:
+       - 4
+       - 1663
+       - 20
+       - 1
+       - 20
+       - 0
+       - 5
+
+  NIII:
+    center: 1747
+    window_min: 240
+    window_max: 250
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 0.5
+       - 1747
+       - 10
+       - 0
+       - 5.1
+
+  CIII:
+    center: 1908
+    window_min: 60
+    window_max: 60
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 5
+       - 1908
+       - 20
+       - 0
+       - 3.5
+
+  MgII:
+    center: 2798
+    window_min: 225
+    window_max: 300
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 1
+       - 2798
+       - 20
+       - 0
+       - 1.2
+
+
+  OII:
+    center: 3728
+    window_min: 230
+    window_max: 240
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 1
+       - 3728
+       - 20
+       - 0
+       - 1.5
+
+
+  NeIII:
+    center: 3868
+    window_min: 30
+    window_max: 30
+    fit_type: single_gaussian 
+    intitial_condition:
+       - 7
+       - 3868
+       - 20
+       - 0
+       - 1.5
+
+  OIII5007:
+    center: 5007
+    window_min: 350
+    window_max: 290
+    fit_type: triple_gaussian
+    line_ratio1: 0.9906131416017575
+    line_ratio2: 0.9722388655881765
+    intitial_condition:
+       - 2
+       - 5007
+       - 30
+       - .1
+       - 10
+       - 0
+       - -1
+
+  halpha:
+    center: 6564
+    window_min: 330
+    window_max: 340
+    fit_type: single_gaussian
+    intitial_condition:
+       - 3
+       - 6564
+       - 50
+       - 0
+       - -1
+
