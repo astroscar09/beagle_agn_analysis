@@ -10,7 +10,7 @@ with open('../line_config.yaml', 'r') as f:
 
 def read_spectrum():
     
-    spectrum = pd.read_csv('Full_GHZ2_Spectrum_Rest_Frame.txt', sep = ' ')
+    spectrum = pd.read_csv('../../data/Emission_Lines/Full_GHZ2_Spectrum_Rest_Frame.txt', sep = ' ')
     wave, spec, spec_err = spectrum['wave'].values, spectrum['flux'].values, spectrum['fluxerr'].values    
 
     return wave, spec, spec_err
@@ -90,14 +90,11 @@ def fit_line(config, line):
     
     df = fit_class.fit_spectrum()
 
-    #fit_class.plot_best_fit_model()
-
     return df
 
-#print(config.keys())
 if __name__ == '__main__':
 
     for l in config['line'].keys():
         print(f'Fitting Line: {l}')
         line_fit = fit_line(config, l)
-        line_fit.to_csv(f'line_fits/{l}_emcee_fit.txt', sep = ' ', index = False)
+        line_fit.to_csv(f'../../data/Emission_Lines/emcee_fits/{l}_emcee_fit.txt', sep = ' ', index = False)
