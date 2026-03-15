@@ -2,6 +2,7 @@ import re
 import glob
 import numpy as np
 import pandas as pd
+from plot_best_model import plot_model_comparison
 
 def extract_logz_from_stats(file_path):
     with open(file_path, 'r') as f:
@@ -16,9 +17,23 @@ def extract_logz_from_stats(file_path):
     return None, None  # If not found
 
 model_files = {
-    "Consistency Test": "results/consistency_test_run/1395_BEAGLE_MNstats.dat",
-    "Final Run V2": "results/FINAL_RUN_V2/1395_BEAGLE_MNstats.dat",
-    "CO Grid": "results/CO_Grids/1395_BEAGLE_MNstats.dat"
+    
+    "AGN_SF: NO": "final_ghz2_container/ReRuns/AGNMup100_NO_Grids_Rerun_MNstats.dat", 
+    "AGN+SF: Mup100+CO": "Final_Runs/AGN_Mup100_Nebular_CO_Grids_w_logU_anshbranch_13_fixed_pl_MNstats.dat",
+    "AGN+SF: Mup100 Default": 'Final_Runs/AGN_Mup100_logU_anshbranch_13_fixed_pl_MNstats.dat',
+    "AGN+SF: Mup100+n4": "Final_Runs/AGN_Mup100_default_n4_anshbranch_13_fixed_pl_MNstats.dat",
+
+    "AGN+SF: Mup100+CO+ AGN logU_w_oiii": "Final_Runs/AGN_Mup100_logU_CO_w_oiii_MNstats.dat",
+    
+    "AGN+SF: Mup300": "Final_Runs/AGN_Mup300_default_anshbranch_13_fixed_pl_MNstats.dat",
+    "AGN+SF: Mup300+CO": "Final_Runs/AGN_Mup300_Nebular_CO_Grids_anshbranch_13_fixed_pl_MNstats.dat",
+    "AGN+SF: Mup300+CO": "Final_Runs/AGN_Mup300_Nebular_CO_Grids_w_logU_anshbranch_13_fixed_pl_MNstats.dat",
+    
+    "SF Mup100": "Final_Runs/SF_Mup100_Default_anshbranch_13_fixed_pl_MNstats.dat",
+    "SF Mup300": "Final_Runs/SF_Mup300_Default_anshbranch_13_fixed_pl_MNstats.dat",
+    "SF Mup100 + Nebular CO": "Final_Runs/SF_Mup100_Nebular_CO_anshbranch_13_fixed_pl_MNstats.dat",
+    "SF Mup300 + Nebular CO": "Final_Runs/SF_Mup300_Nebular_CO_anshbranch_13_fixed_pl_MNstats.dat",
+    "SF Mup100 + n4": "Final_Runs/SF_Mup100_Default_n4_anshbranch_13_fixed_pl_MNstats.dat"
 }
 
 def main(model_files):
@@ -42,4 +57,5 @@ def main(model_files):
 if __name__ == '__main__':
 
     
-    main(model_files)
+    df = main(model_files)
+    plot_model_comparison(df)
